@@ -9,12 +9,25 @@ import {CompactPicker } from 'react-color';
 function Compilado() {
 
  const [selectColor, setSelectColor]=useState('Black');
+ const [mouseOn, setMouseOn]= useState(false)
  const Width=10;
  const Height=10;
 
   function cambioColor(color){
       setSelectColor(color.hex)
     }
+
+  document.body.onmousedown = function() {
+    setMouseOn(true);
+    }
+  
+  document.body.onmouseup = function() {
+    setMouseOn(false);
+    }
+
+  function handleReset(){}
+
+
   return (
 
    
@@ -23,7 +36,7 @@ function Compilado() {
       <div className="App">
 
         <div className='botones'>
-          <p>botones aquí</p>
+          <button onClick='handleReset'>Reset</button>
         </div>
 
 
@@ -41,7 +54,8 @@ function Compilado() {
          <Grid   
           width={Width}
           height={Height}
-          selectColor={selectColor}/>
+          selectColor={selectColor}
+          mouseOn={mouseOn}/>
        
         </div>
 

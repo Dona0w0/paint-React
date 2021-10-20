@@ -8,11 +8,18 @@ function Pixel(props) {
   const [pixelColor, setPixelColor] = useState("black");
   const [prevColor, setprevColor] = useState(pixelColor);
   const [cambiaColor, setCambiaColor] = useState(true);
-  const { selectColor } = props;
+  const { selectColor,mouseOn } = props;
 
   function handleChangeColor(event) {
     setPixelColor(selectColor);
     setCambiaColor(false);
+  }
+  
+  function handleOver(){
+    if(mouseOn===true){
+      setPixelColor(selectColor);
+      setCambiaColor(false);
+    }
   }
     
   function handleToqueMouse(event){
@@ -32,6 +39,7 @@ function Pixel(props) {
       onClick={handleChangeColor}
       onMouseEnter={handleToqueMouse}
       onMouseLeave={handleNoTocaMouse}
+      onMouseOver={handleOver}
       style={{ backgroundColor: pixelColor }}>
 
       </div>
