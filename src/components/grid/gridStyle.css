@@ -1,12 +1,20 @@
-.CGrid {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-    justify-content: space-around;
-}
  html{
      background-color:  rgb(60, 83, 105);;
  }
- #print{
-     margin: 40px;
- }
+ 
+ .CGrid {
+	display: flex;
+	align-items: center;
+    justify-content: space-around;
+}
+
+.foto{
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+    height: 580px;
+    width: 530px;
+    margin: 30px;
+    background: gray;
+}
+

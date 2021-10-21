@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import CreaLinea from "../fila/fila";
+import "./gridStyle.css"
 import html2canvas from 'html2canvas';
 
 function Grid(props) {
@@ -24,15 +25,21 @@ function Grid(props) {
   return (
 
     <div className='CGrid' >
-      <div id="pixels" ref={gridRef}>
+      <div className='print'>
+        <button onClick={handlePrint}>Imprimir</button>
+      </div>
+
+      <div className="foto">
+        <p>Foto</p>
+        <div  ref={printRef}>
+        </div> 
+      </div>
+
+      <div className="pixels" ref={gridRef}>
         {fila}
       </div>
 
-      <div id='print'>
-        <button onClick={handlePrint}>Imprimir</button>
-      </div>
-      <div ref={printRef}>
-      </div>
+
 
       </div>
   );
