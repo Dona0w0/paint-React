@@ -5,9 +5,9 @@ import './pixelStyle.css'
 function Pixel(props) {
   
 
-  const [pixelColor, setPixelColor] = useState("white");
-  const [prevColor, setprevColor] = useState(pixelColor);
-  const [cambiaColor, setCambiaColor] = useState(true);
+  const [pixelColor, setPixelColor] = useState("white");//color default
+  const [prevColor, setprevColor] = useState(pixelColor);//color seleccionado
+  const [cambiaColor, setCambiaColor] = useState(true);// permite cambiar color
   const { selectColor,mouseOn } = props;
 
 
