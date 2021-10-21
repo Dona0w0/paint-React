@@ -9,6 +9,5 @@ Aquí puedes ver un dibujo :)
 y tambien puedes limpiar el tablero 
 ![alt text](https://github.com/Dona0w0/paint-React/blob/main/Paint3.png)</br>
 
-Asi funciona:
-![alt text]()</br>
+
 
