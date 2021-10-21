@@ -1,5 +1,6 @@
 .fila {
     display: flex;
     width: fit-content;
+    background-color: rgb(60, 83, 105);
   }
   

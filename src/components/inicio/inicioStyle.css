@@ -1,9 +1,25 @@
-.displayGrid{
-    border: red;
-    
+.App{
+    background-color: rgb(60, 83, 105);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
-.botones{
-    border: red;
-    border-width: 3px;
-    
+.displayPaleta{
+    margin: 30px;
 }
+.barra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    padding: 14px 40px;
+    transition-duration: 0.4s;
+  }
+  h1{
+      color:white;
+  }

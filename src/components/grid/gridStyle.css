@@ -1,3 +1,12 @@
-.pixels{
-    border: rebeccapurple;
+.CGrid {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+    justify-content: space-around;
 }
+ html{
+     background-color:  rgb(60, 83, 105);;
+ }
+ #print{
+     margin: 40px;
+ }

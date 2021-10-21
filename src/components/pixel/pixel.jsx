@@ -5,10 +5,11 @@ import './pixelStyle.css'
 function Pixel(props) {
   
 
-  const [pixelColor, setPixelColor] = useState("black");
+  const [pixelColor, setPixelColor] = useState("white");
   const [prevColor, setprevColor] = useState(pixelColor);
   const [cambiaColor, setCambiaColor] = useState(true);
   const { selectColor,mouseOn } = props;
+
 
   function handleChangeColor(event) {
     setPixelColor(selectColor);
@@ -40,7 +41,9 @@ function Pixel(props) {
       onMouseEnter={handleToqueMouse}
       onMouseLeave={handleNoTocaMouse}
       onMouseOver={handleOver}
-      style={{ backgroundColor: pixelColor }}>
+      style={{ backgroundColor: pixelColor,
+                disabled:props.dibujoactivo,
+              border: props.borders === true ? '1px groove #565859' : '0' }}>
 
       </div>
   );
