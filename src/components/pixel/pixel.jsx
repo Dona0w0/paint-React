@@ -44,7 +44,6 @@ function Pixel(props) {
       style={{ backgroundColor: pixelColor,
                 disabled:props.dibujoactivo,
               border: props.borders === true ? '1px groove #565859' : '0' }}>
-
       </div>
   );
 }

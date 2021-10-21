@@ -38,9 +38,7 @@ function Grid(props) {
       <div className="pixels" ref={gridRef}>
         {fila}
       </div>
-
-
-
+      
       </div>
   );
 }      
