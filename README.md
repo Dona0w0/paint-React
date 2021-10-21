@@ -1,6 +1,7 @@
 # paint-React
 En este repo podrás encontrar la implementacion basica de un pixel paint, en el cual podrás hacer un dibujo e imprimirlo como una imagen.
-
+Con ayuda de Netlify ahora puedes abrir la app como cualquier otro link, te lo dejo aquí abajo
+ `<a href="https://react-paint-dona-uwu.netlify.app/">link</a>`
 
 Asi se visualisa la app al abrirla 
 ![alt text](https://github.com/Dona0w0/paint-React/blob/main/Paint1.png)</br>
