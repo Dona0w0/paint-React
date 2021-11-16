@@ -37,34 +37,36 @@ function Compilado() {
       setTextBoton('Borrar Todo');
   }
 
-   const paletaRandom =async()=>{
+   const paletaRandom =async()=>{// funcion asincrona 
     
-      axios.get('https://www.colr.org/json/colors/random/50')
+      axios.get('https://www.colr.org/json/colors/random/50')// llamada a la api para generar los colores aleatorios , se piden 50 colores por si alguno llega vacio 
       .then(response => { 
-        setPaletaState('loading');
-        const arrApi= response.data.matching_colors;
-        const arrGato = arrApi.map((value) => {
-          return '#' + value;
+        setPaletaState("loading");// cambia el estado de la paleta a cargando 
+        const arrApi= response.data.matching_colors;// arreglo con los colores traidos de la api
+       
+        const arrFiltro=arrApi.filter(element => { 
+           return element!=="";//quita los elementos vacios
         });
         
-        const arrFiltro=arrGato.filter(element => { 
-           return element !== '#';
+        const arrGato = arrFiltro.map((value) => {
+          return "#"+value;// añade un # a cada color para que sean reconocibles por el selector de colores
         });
-      
-        const arrFinal = []; 
-        for(let i = 0; i < 36; i++) 
+        
+
+        let arrFinal = []; 
+        for(let i = 0; i < 36; i++) // toma 306 colores de los 50 restantes del filtro
           { 
-            arrFinal.push(arrFiltro[i]);
+            arrFinal.push(arrGato[i]);
           }
 
-      setColores(arrFinal);
-      //setPaletaState("finish");
+      setColores(arrFinal);// se pasa el arreglo de 36 colores a la variable que los pasara al selector
+      setPaletaState("finish");// cambia el estado de terminado por lo cual aparecera la paleta 
      })
      .catch(() => {
-        setPaletaState("fail");
+        setPaletaState("fail");// en caso de fallo o error se el estado se cambiara 
      })
     }
-    
+
   useEffect(()=>{paletaRandom()},[]);
 
   return (
@@ -77,19 +79,22 @@ function Compilado() {
             <div className='boton'>
               <button onClick={handleReset}>{textBoton}</button>
             </div>
-
-            {paletaState==="idle"||paletaState==="loading"&&
+            
+            {/*estado cargando*/}
+            {paletaState==="idle"||paletaState==="loading"&& 
               <div className="displayPaleta">
                 <h1>Cargando paleta...</h1>
               </div> 
             }
 
+            {/*mostrar paleta*/}
             {paletaState==="finish" &&
               <div className="displayPaleta">
                  <CompactPicker  colors={colores} color={selectColor} onChangeComplete={cambioColor}/>{/* que crea una paleta de coleres*/}
               </div>
             } 
 
+            {/*Error al cargar paleta*/}
             {paletaState==="fail"&&
             <div className="displayPaleta">
               <p>falla en la carga de paleta</p>
@@ -98,7 +103,6 @@ function Compilado() {
             }
            
         </div>
-
 
         { reinicio &&
         <div className='displayGrid' >
