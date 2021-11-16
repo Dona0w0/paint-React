@@ -7,9 +7,8 @@ function App() {
   return (
 
     <Fragment>
-
       <Compilado/>
-      </Fragment>
+    </Fragment>
   );
 }
 

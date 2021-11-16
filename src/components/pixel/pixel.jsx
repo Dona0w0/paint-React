@@ -16,30 +16,18 @@ function Pixel(props) {
     setCambiaColor(false);
   }
   
-  function handleOver(){
+  function handleOver(){//checa si el mouse esta presionado
     if(mouseOn===true){
       setPixelColor(selectColor);
       setCambiaColor(false);
     }
   }
     
-  function handleToqueMouse(event){
-      setprevColor(pixelColor);
-      setPixelColor(selectColor);
-  }
-  function handleNoTocaMouse(event){
-      if(cambiaColor){
-          setPixelColor(prevColor);
-      }
-      setCambiaColor(true);
-  }
-   
 
+   
   return (
     <div className="pixel"
       onClick={handleChangeColor}
-      onMouseEnter={handleToqueMouse}
-      onMouseLeave={handleNoTocaMouse}
       onMouseOver={handleOver}
       style={{ backgroundColor: pixelColor,
                 disabled:props.dibujoactivo,

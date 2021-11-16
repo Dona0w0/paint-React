@@ -14,16 +14,15 @@ function Grid(props) {
       fila.push(<CreaLinea key={i} width={width} selectColor={selectColor} mouseOn={mouseOn} />);
     }
 
-    function handlePrint(event) {
-      
+    function handlePrint(event) { 
       printRef.current.innerHTML = '';
-      html2canvas(gridRef.current).then(function(canvas) {// componente que nos ayuda a obtener una imagen del html
+      html2canvas(gridRef.current).then(function(canvas) // componente que nos ayuda a obtener una imagen del html
+       {
           printRef.current.appendChild(canvas);
-        });
+       });
     }
 
   return (
-
     <div className='CGrid' >
       <div className='print'>
         <button onClick={handlePrint}>Imprimir</button>
